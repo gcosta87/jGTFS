@@ -1,4 +1,4 @@
-package especificacion.componente;
+package ar.com.libreware.jgtfs.specification.component;
 
 /**
  * Clase que mapea a Routes.txt
