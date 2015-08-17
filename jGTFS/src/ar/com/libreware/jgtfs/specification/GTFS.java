@@ -31,7 +31,8 @@ import ar.com.libreware.jgtfs.specification.persistence.file.GTFSFileWriter;
 public class GTFS {
 	//	ATRIBUTOS
 	//
-	private Agency agency;
+	private List<Agency> agencies;
+	
 	private List<Stop> stops;
 	
 	private List<Route> routes;
@@ -60,8 +61,27 @@ public class GTFS {
 	//	CONSTRUCTORES
 	//
 	public GTFS(){
-		this.stops = new ArrayList<Stop>();
-		this.routes = new ArrayList<Route>();
+		this.agencies	= new ArrayList<Agency>();
+		
+		this.stops		= new ArrayList<Stop>();
+		
+		this.routes		= new ArrayList<Route>();
+		this.trips		= new ArrayList<Trip>();
+		this.stopTimes	= new ArrayList<StopTime>();
+		
+		this.calendars		= new ArrayList<Calendar>();
+		this.calendarDates	= new ArrayList<CalendarDate>();
+		
+		this.fareAtributes	= new ArrayList<FareAttribute>();
+		this.fareRules		= new ArrayList<FareRule>();
+		
+		this.shapes = new ArrayList<Shape>();
+		
+		this.frequencies	= new ArrayList<Frequency>();
+		
+		this.transfers		= new ArrayList<Transfer>();
+
+		this.feedInfo = new FeedInfo();
 		
 		this.gtfsReader = new GTFSFileReader();
 		this.gtfsWriter = new GTFSFileWriter();
@@ -73,6 +93,7 @@ public class GTFS {
 	
 	public GTFS(GTFSReader gtfsReader, GTFSWriter gtfsWriter){
 		this();
+		
 		this.gtfsReader = gtfsReader;
 		this.gtfsWriter = gtfsWriter;
 	}
@@ -94,15 +115,18 @@ public class GTFS {
 		this.gtfsWriter.save(this);
 	}
 
-	
+	public boolean validate(){
+		//TODO falta implementar!
+		return false;
+	}
 	
 	//	GETTERS/SETTERS
-	public Agency getAgency() {
-		return agency;
+	public List<Agency> getAgencies() {
+		return this.agencies;
 	}
 
-	public void setAgency(Agency agency) {
-		this.agency = agency;
+	public void setAgencies(List<Agency> agencies) {
+		this.agencies = agencies;
 	}
 
 	public List<Stop> getStops() {

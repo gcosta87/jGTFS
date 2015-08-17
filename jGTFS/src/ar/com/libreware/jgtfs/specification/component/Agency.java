@@ -196,4 +196,10 @@ public class Agency extends AbstractComponent{
 		// TODO Auto-generated method stub
 		return 0;
 	}
+
+	@Override
+	public boolean equals(AbstractComponent otherComponent) {
+		// TODO Auto-generated method stub
+		return false;
+	}
 }
