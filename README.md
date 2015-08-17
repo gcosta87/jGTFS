@@ -27,7 +27,7 @@ Implementación inicial
 	especificacion.load();	//Recupera una especificacion existente
 
 	//Modificaciones
-	especificacion.getAgencys().get(0).setName("Nueva Linea de Micros");
+	especificacion.getAgencies().get(0).setName("Nueva Linea de Micros");
 	
 	//Si la especificacion es válida tras los cambios, se regeneran los archivos
 	if(especificacion.validate()){
