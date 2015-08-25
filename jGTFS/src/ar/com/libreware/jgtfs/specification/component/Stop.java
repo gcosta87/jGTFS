@@ -1,5 +1,8 @@
 package ar.com.libreware.jgtfs.specification.component;
 
+import ar.com.libreware.jgtfs.specification.component.extra.Coordinate;
+import ar.com.libreware.jgtfs.specification.component.extra.Zone;
+import ar.com.libreware.jgtfs.specification.component.extra.ConstantEnum;
 /**
  * Clase que mapea a stops.txt
  * 
@@ -9,41 +12,43 @@ package ar.com.libreware.jgtfs.specification.component;
 public class Stop extends AbstractComponent{
 	public static final String DEFAULT_TIMEZONE	= "America/Argentina/Buenos_Aires";
 	
-	public static enum LocationType{
+	public static final class LocationType extends ConstantEnum{
 		/**
 		 * Define que la parada, es en si misma  una y no se encuentra ubicada en una Estación.
 		 */
-		STOP,
+		public static final LocationType STOP = new LocationType(0);
 		/**
 		 * Define que la parada es una Estación (contiene a otras paradas).
 		 */
-		STATION;
+		public static final LocationType STATION = new LocationType(1);
+		
+		private LocationType(int value){
+			super(value);
+		}
 	}
 	
-	public static enum  WheelchairBoarding{
+	public static final class WheelchairBoarding extends ConstantEnum{
 		/**
 		 * No se especifica informacion sobre si se puede acceder usando silla de ruedas.
 		 */
-		NOT_ESPECIFIED(0),
+		public static final WheelchairBoarding NOT_ESPECIFIED = new WheelchairBoarding(0);
 		
 		/**
 		 * Indica que la parada cuenta con soporte para acceder usando silla de ruedas
 		 */
-		SUPPORTED(1),
+		public static final WheelchairBoarding SUPPORTED= new WheelchairBoarding(1);
 		
 		/**
 		 * Indica que la parada no cuenta no cuenta con soporte para acceder usando silla de ruedas.
 		 */
-		NOT_SUPPORTED(2),
+		public static final WheelchairBoarding NOT_SUPPORTED= new WheelchairBoarding(2);
 		/**
 		 * Solo para los casos de ser una parada ubicada en una Estacion, indica que esta caracteristica depende de la definicion en la Estacion.
 		 */
-		STATION_INHERIT(0);
-		
-		private byte value;
+		public static final WheelchairBoarding STATION_INHERIT= new WheelchairBoarding(0);
 		
 		private WheelchairBoarding(int value){
-			this.value = (byte)value;
+			super(value);
 		}
 		
 	}

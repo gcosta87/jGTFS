@@ -1,6 +1,8 @@
-package ar.com.libreware.jgtfs.specification.component;
+package ar.com.libreware.jgtfs.specification.component.extra;
 
 import java.text.DecimalFormat;
+
+import ar.com.libreware.jgtfs.specification.component.AbstractComponent;
 
 public class Coordinate extends AbstractComponent{
 	private static final DecimalFormat formato = new DecimalFormat();

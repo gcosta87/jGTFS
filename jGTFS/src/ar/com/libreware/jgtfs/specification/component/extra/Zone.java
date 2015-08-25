@@ -1,4 +1,6 @@
-package ar.com.libreware.jgtfs.specification.component;
+package ar.com.libreware.jgtfs.specification.component.extra;
+
+import ar.com.libreware.jgtfs.specification.component.AbstractComponent;
 
 /**
  * Representa la Zona utilizada en las paradas para indicar reglas de cobro
